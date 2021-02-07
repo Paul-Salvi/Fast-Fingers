@@ -1,0 +1,16 @@
+.game-play{
+ 
+}
+
+.timer-display{
+   font-size: xx-large;
+}
+
+.word-display { 
+   color: #ffffff;
+   font-size: 4rem; 
+ }
+
+ .word-input{
+   text-transform:uppercase
+ }
