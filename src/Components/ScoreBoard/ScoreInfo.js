@@ -15,7 +15,7 @@ function ScoreInfo() {
    }
 
    useEffect(() => {
-      const timer = setInterval(() => updateTotalScore(totalMs + 10), 10);
+      const timer = setInterval(() => updateTotalScore(totalMs + 10), 1);
       return () => clearInterval(timer);
    }, [totalMs]);
 

@@ -15,6 +15,7 @@ function WordsDisplay() {
 
    const getNewWord = () => {
       Utils.saveTotalNewWords(totalNewWords += 1);
+      //Utils.updateGameDifficultyFactor(parseInt(1) * 0.01);
       return wordMgr.getWord(Utils.getUserSession().difficultyLevel).toLocaleUpperCase();
    }
 
@@ -37,6 +38,8 @@ function WordsDisplay() {
    const handleWordChange = (event) => {
       if (newWord === event.target.value.toLocaleUpperCase()) {
          setNewWord(getNewWord());
+         var currentDiffFactor = Utils.getGameDifficultyFactor();
+         Utils.updateGameDifficultyFactor(currentDiffFactor + 0.01);
          event.target.value = "";
          setPendingTimeInMs(defaultTimeOutInMs);
       }
@@ -59,7 +62,6 @@ function WordsDisplay() {
             </div>
             <div className="row">
                <div className="timer-display">
-
                   Time : {pendingDuration.seconds} : {pendingDuration.milliseconds}
                </div>
             </div>

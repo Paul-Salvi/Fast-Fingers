@@ -7,34 +7,32 @@ function Initialize() {
   let history = useHistory();
   const [difficulty, setDifficulty] = useState('');
   const [name, setName] = useState('');
-  let errorMsg = "";
- 
+  const [errorMessage, setErrorMessage] = useState('');
 
   const handleStartClick = (event) => {
-    event.preventDefault();
     if (name.length > 0) {
-      Utils.saveUserSession(name.toLocaleUpperCase(), difficulty.toLocaleUpperCase());
+      Utils.saveUserSession(name.toLocaleUpperCase(), difficulty.toLocaleUpperCase());    
       history.push(Utils.REDIRECT_TO_GAME);
     } else {
-      errorMsg = "Please provide username";
+      setErrorMessage("Please provide username");
     }
   }
 
   return (
     <div className="start-module">
       <h1 className="center">Fast Fingers </h1>
-      <input required placeholder="TYPE YOUR NAME" class="" onChange={event => setName(event.target.value)} />
+      <input required placeholder="TYPE YOUR NAME" className="" onChange={event => setName(event.target.value)} />
       <br />
-      <label>{errorMsg} </label>
+      <label>{errorMessage} </label>
       <br />
-      <select class="select-level" onChange={event => setDifficulty(event.target.value)} >
-        <option value="EASY" selected="">EASY</option>
+      <select className="select-level" onChange={event => setDifficulty(event.target.value)} >
+        <option value="EASY">EASY</option>
         <option value="MEDIUM">MEDIUM</option>
         <option value="HARD">HARD</option>
       </select>
       <br />
       <br />
-      <button onClick={handleStartClick} class="btn-start-game">START GAME</button>
+      <button onClick={handleStartClick} className="btn-start-game">START GAME</button>
     </div>
   );
 }
