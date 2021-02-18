@@ -1,0 +1,16 @@
+.Logo{
+   text-align: center;
+   margin-bottom: 2rem;
+}
+.logoTitle{
+   color: #A8242F;
+   font-size: xx-large;
+}
+.logoDescription{
+   color: #A8242F;
+   font-size: small;
+}
+.keyboardLogo{
+   width: 130px;
+   height: 100px;
+}

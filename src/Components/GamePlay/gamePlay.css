@@ -1,14 +1,13 @@
-.game-play{
- 
+.gamePlay{
+  text-align: left;
 }
 
 .timer-display{
    font-size: xx-large;
 }
 
-.word-display { 
-   color: #ffffff;
-   font-size: 4rem; 
+.wordDisplay { 
+
  }
 
  .word-input{

@@ -1,6 +1,6 @@
 import Initialize from './Components/Initialize/initialize';
-import GamePlay from './Components/GamePlay/gamePlay';
-import GameOver from './Components/GameOver/gameOver';
+import GamePlay from './Components/GamePlay/GamePlay';
+import GameOver from './Components/GameOver/GameOver';
 
 import Container from 'react-bootstrap/Container';
 
