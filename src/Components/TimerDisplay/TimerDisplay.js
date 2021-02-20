@@ -3,12 +3,11 @@ import "./TimerDisplay.css";
 import CircularCountdown from "../CircularCountdown/CircularCountdown";
 
 function TimerDisplay({ duration }) {
-   return (
-      <div>
+   return ( 
+          
          <CircularCountdown
             duration={duration}>
-         </CircularCountdown>
-      </div>
+         </CircularCountdown>     
    );
 }
 

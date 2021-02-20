@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import Utils from '../../Utils/GameService';
-import TimerService from '../../Utils/TimerService';
+import TimerHelper from '../../Utils/TimerHelper';
 import './ScoreInfo.css'
 
 
 function ScoreInfo() {
 
    let [totalMs, setTotalMs] = useState(0);
-   let [totalDuration, setTotalDuration] = useState(TimerService.milliSecsToTime(0));
+   let [totalDuration, setTotalDuration] = useState(TimerHelper.milliSecsToTime(0));
    const updateTotalScore = (ms) => {
-      const duration = TimerService.milliSecsToTime(ms);
+      const duration = TimerHelper.milliSecsToTime(ms);
       Utils.updateTotalDuration(`${duration.minutes}.${duration.seconds}.${duration.seconds}`);
       setTotalDuration(duration);
       setTotalMs(ms);

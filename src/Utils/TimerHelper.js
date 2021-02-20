@@ -1,5 +1,5 @@
 
-const TimerService = { 
+const TimerHelper = { 
 
   milliSecsToTime : (duration) => {
 
@@ -24,4 +24,4 @@ const TimerService = {
 
 }
 
-export default TimerService
+export default TimerHelper

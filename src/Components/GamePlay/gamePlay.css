@@ -1,15 +1,5 @@
-.gamePlay{
-  text-align: left;
+.center{      
+   display: flex;
+  justify-content: center;
+  margin-top: 10%;
 }
-
-.timer-display{
-   font-size: xx-large;
-}
-
-.wordDisplay { 
-
- }
-
- .word-input{
-   text-transform:uppercase
- }

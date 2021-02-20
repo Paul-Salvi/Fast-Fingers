@@ -10,18 +10,19 @@ import Utils from '../../Utils/GameService';
 import Button from '../Common/Button/Button';
 import TextBox from '../Common/TextBox/TextBox';
 import crossIcon from '../../public/icons/cross-icon.svg';
-import TimerService from "../../Utils/TimerService";
+import TimerHelper from "../../Utils/TimerHelper";
 import WordManager from '../../Utils/WordManager';
+import { Row, Col } from 'react-bootstrap';
 
 function GamePlay() {
 
    let totalNewWords = 0;
    const defaultTimeOutInMs = Utils.getGameTimeout();
-   const defaultTimeoutDuration = TimerService.milliSecsToTime(defaultTimeOutInMs);
-   let [pendingTimeInMs, setPendingTimeInMs] = useState(defaultTimeOutInMs);
-   let [pendingDuration, setPendingDuration] = useState(defaultTimeoutDuration);
-   let wordMgr = new WordManager();
-   let [typedText, setTypedText] = useState('');
+   const defaultTimeoutDuration = TimerHelper.milliSecsToTime(defaultTimeOutInMs);   
+   const [pendingTimeInMs, setPendingTimeInMs] = useState(defaultTimeOutInMs);
+   const [pendingDuration, setPendingDuration] = useState(defaultTimeoutDuration);
+   const wordMgr = new WordManager();
+   const [typedText, setTypedText] = useState('');
 
    const getNewWord = () => {
       Utils.saveTotalNewWords(totalNewWords += 1);
@@ -32,11 +33,12 @@ function GamePlay() {
 
 
    const updateTimeOutDisplay = (time) => {
-      setPendingDuration(TimerService.milliSecsToTime(time));
+      setPendingDuration(TimerHelper.milliSecsToTime(time));
       setPendingTimeInMs(time);
    }
 
    const handleTimeOut = () => {
+      console.log(Utils.getTotalDuration());
       Utils.saveUserScore(Utils.getTotalDuration());
       //history.push(Utils.REDIRECT_TO_EXIST);
       return;
@@ -56,7 +58,7 @@ function GamePlay() {
 
 
    useEffect(() => {
-      const timer = pendingTimeInMs > 0 && setInterval(() => updateTimeOutDisplay(pendingTimeInMs - 40), 10);
+      const timer = pendingTimeInMs > 0 && setInterval(() => updateTimeOutDisplay(pendingTimeInMs - 10), 10);
       if (pendingTimeInMs === 0) {
          handleTimeOut();
       }
@@ -78,41 +80,36 @@ function GamePlay() {
 
    return (
 
-
-      <div className="gamePlay">
-         <div className="row">
-            <div className="col-sm-3">
-
-               <PlayerInfo />
-               <ScoreBoard />
-               <Button
-                  icon={crossIcon}
-                  text="STOP GAME"
-                  onClick={handleStopGame} >
-               </Button>
-
+      <Row>
+         <Col md={3} >
+            <PlayerInfo />
+            <ScoreBoard />
+            <Button
+               icon={crossIcon}
+               text="STOP GAME"
+               onClick={handleStopGame} >
+            </Button>
+         </Col>
+         <Col md={6}>
+            <div className="center">
+               <TimerDisplay
+                  duration={pendingDuration} >
+               </TimerDisplay>
             </div>
-            <div className="col-sm-1"></div>
-            <div className="col-sm-4 center">
-               <div className="">
-                  <TimerDisplay
-                     duration={pendingDuration} >
-                  </TimerDisplay>
-                  <WordsDisplay
-                     word={newWord}
-                     typedText={typedText} >
-                  </WordsDisplay>
-                  <TextBox
-                     textAlign="center"
-                     onChange={handleWordChange} >
-                  </TextBox>
-               </div>
-            </div>
-            <div className="col-sm-4">
-               <ScoreInfo />
-            </div>
-         </div>
-      </div>
+
+            <WordsDisplay
+               word={newWord}
+               typedText={typedText} >
+            </WordsDisplay>
+            <TextBox
+               textAlign="center"
+               onChange={handleWordChange} >
+            </TextBox>
+         </Col>
+         <Col md={3}>
+            <ScoreInfo />
+         </Col>
+      </Row>
 
 
    );

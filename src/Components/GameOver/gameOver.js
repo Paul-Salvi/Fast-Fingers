@@ -7,6 +7,7 @@ import crossIcon from '../../public/icons/cross-icon.svg';
 import reloadIcon from '../../public/icons/reload-icon.svg';
 import Text from '../Common/Text/Text'
 import './GameOver.css';
+import { Row, Col } from 'react-bootstrap';
 
 function GameOver() {
   let history = useHistory();
@@ -25,45 +26,43 @@ function GameOver() {
 
 
   return (
-    <div className="row">
-      <div className="col-sm-4">
+    <Row  >
+      <Col md={3}>
         <PlayerInfo />
-
-        <div>
-          <Button
-            icon={crossIcon}
-            text="QUIT"
-            onClick={handleQuit} >
-          </Button>
+        <div className="mt-3">
+         
         </div>
-      </div>
 
-      <div className="col-sm-4 " >
-        <div className="scoreContainer" >
-          <Text
-            text={"SCORE : GAME " + scores.length}>
-          </Text>
-        </div>
+      </Col>
+
+      <Col md={6} className="mt-5" >
+        <Text
+          text={"SCORE : GAME " + scores.length}>
+        </Text>
         <div className="score">
           {latestScore}
           {latestScore >= maxScore &&
             <div> New High Score </div>
           }
         </div>
-        <div>
-          <Button
-            icon={reloadIcon}
-            text="PLAY AGAIN"
-            onClick={handlePlayAgain} >
+        <Button
+          icon={reloadIcon}
+          text="PLAY AGAIN"
+          onClick={handlePlayAgain} >
+        </Button>
+        <Button
+            icon={crossIcon}
+            text="QUIT"
+            onClick={handleQuit} >
           </Button>
-        </div>
-      </div>
-      <div className="col-sm-4">
+      </Col>
+
+      <Col md={3}>
         <Text
           text="Fast Fingers">
         </Text>
-      </div>
-    </div>
+      </Col>
+    </Row>
   );
 }
 
