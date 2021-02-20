@@ -12,8 +12,15 @@ import { Row, Col } from 'react-bootstrap';
 function GameOver() {
   let history = useHistory();
   const scores = Utils.getUserScores() ?? [];
-  const latestScore = scores[scores.length - 1] ?? 0;
-  const maxScore = Math.max(...scores);
+  let latestScore = scores[scores.length - 1] ?? 0;
+  console.log(scores);
+  const highestScore = Utils.getMaxScore(scores);
+  const totalSolved = Utils.getTotalNewWords();
+  Utils.saveTotalNewWords(0);
+  if (totalSolved < 2) {
+    latestScore = 0;
+  }
+
 
   const handlePlayAgain = (event) => {
     history.push(Utils.REDIRECT_TO_GAME);
@@ -30,7 +37,7 @@ function GameOver() {
       <Col md={3}>
         <PlayerInfo />
         <div className="mt-3">
-         
+
         </div>
 
       </Col>
@@ -40,21 +47,28 @@ function GameOver() {
           text={"SCORE : GAME " + scores.length}>
         </Text>
         <div className="score">
-          {latestScore}
-          {latestScore >= maxScore &&
+          <Text
+            text={latestScore}>
+          </Text>
+          {latestScore >= highestScore &&
             <div> New High Score </div>
           }
         </div>
+
+        <Text
+          text={"Highest score : " + highestScore.minutes + ":" + highestScore.seconds + ":" + highestScore.milliseconds}>
+        </Text>
+
         <Button
           icon={reloadIcon}
           text="PLAY AGAIN"
           onClick={handlePlayAgain} >
         </Button>
         <Button
-            icon={crossIcon}
-            text="QUIT"
-            onClick={handleQuit} >
-          </Button>
+          icon={crossIcon}
+          text="QUIT"
+          onClick={handleQuit} >
+        </Button>
       </Col>
 
       <Col md={3}>

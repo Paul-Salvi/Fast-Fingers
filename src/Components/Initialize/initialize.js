@@ -8,6 +8,8 @@ import Text from '../Common/Text/Text';
 import TextBox from '../Common/TextBox/TextBox';
 import DropDown from '../Common/DropDown/DropDown';
 import playIcon from '../../public/icons/play-icon.svg'
+import { Row, Col } from 'react-bootstrap';
+
 function Initialize() {
   let history = useHistory();
   const [difficulty, setDifficulty] = useState('');
@@ -30,26 +32,28 @@ function Initialize() {
   }
 
   return (
-    <div className="start-module">
-      <Logo />
-      <TextBox
-        text={name}
-        setText={setName}
-        placeholder="Type your name"
-        isError={isError}>
-      </TextBox>
-      <Text text={errorMessage} ></Text>
-      <DropDown
-        items={difficulties}
-        setItem={setDifficulty}
-        placeholder="Difficulty Level">
-      </DropDown>
-      <Button
-        icon={playIcon}
-        text="Start Game"
-        onClick={handleStartClick} >
-      </Button>
-    </div>
+    <Row>
+      <Col>
+        <Logo />
+        <TextBox
+          text={name}
+          setText={setName}
+          placeholder="Type your name"
+          isError={isError}>
+        </TextBox>
+        <Text text={errorMessage} ></Text>
+        <DropDown
+          items={difficulties}
+          setItem={setDifficulty}
+          placeholder="Difficulty Level">
+        </DropDown>
+        <Button
+          icon={playIcon}
+          text="Start Game"
+          onClick={handleStartClick} >
+        </Button>
+      </Col>
+    </Row>
   );
 }
 

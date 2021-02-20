@@ -15,13 +15,15 @@ function ScoreInfo() {
       setTotalMs(ms);
    }
 
+
    useEffect(() => {
       const timer = setInterval(() => updateTotalScore(totalMs + 1000), 1000);
       return () => clearInterval(timer);
+
    }, [totalMs]);
 
    return (
-      <div className= "scoreInfo">
+      <div className="scoreInfo">
          <p>FAST FINGERS </p>
          <p>SCORE  : {totalDuration.minutes}.{totalDuration.seconds} </p>
       </div>

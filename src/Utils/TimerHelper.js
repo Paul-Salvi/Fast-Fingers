@@ -1,7 +1,7 @@
 
-const TimerHelper = { 
+const TimerHelper = {
 
-  milliSecsToTime : (duration) => {
+  milliSecsToTime: (duration) => {
 
     let milliseconds = parseInt((duration % 1000));
     let seconds = Math.floor((duration / 1000) % 60);
@@ -19,9 +19,19 @@ const TimerHelper = {
       seconds,
       milliseconds
     };
+  },
 
+  durationToMilliSec: (duration) => {
+    let totalMilliSec = 0;
+    var arr = duration.split('.');
+    const minutes = parseInt(arr[0]);
+    const seconds = parseInt(arr[1]);
+    const milliSecs = parseInt(arr[2]);
+    totalMilliSec = milliSecs;
+    totalMilliSec += minutes * (1000 * 60);
+    totalMilliSec += seconds * 1000;       
+    return totalMilliSec;
   }
-
 }
 
 export default TimerHelper

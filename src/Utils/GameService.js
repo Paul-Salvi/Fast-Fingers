@@ -1,3 +1,5 @@
+import TimerHelper from "./TimerHelper";
+
 const keyUserName = "userName";
 const keyGameScores = "gameScores";
 const keyDifficultyLevel = "difficultyLevel";
@@ -44,8 +46,8 @@ const Utils = {
       sessionStorage.clear();
       sessionStorage.setItem(keyUserName, userName);
       sessionStorage.setItem(keyDifficultyLevel, difficultyLevel);
-      sessionStorage.setItem(keyGameDifficultyFactor, DIFFICULTY_LEVELS[difficultyLevel]); 
-   
+      sessionStorage.setItem(keyGameDifficultyFactor, DIFFICULTY_LEVELS[difficultyLevel]);
+
    },
 
    getUserSession: () => ({
@@ -57,11 +59,11 @@ const Utils = {
       return 4000;
    },
 
-   getGameDifficultyFactor: () => {      
+   getGameDifficultyFactor: () => {
       return parseFloat(sessionStorage.getItem(keyGameDifficultyFactor));
    },
 
-   
+
    updateGameDifficultyFactor: (difficultyFactor) => {
       const currentDifficultyFactor = parseFloat(difficultyFactor);
       console.log(difficultyFactor);
@@ -85,7 +87,11 @@ const Utils = {
       return sessionStorage.getItem(keyGameDuration);
    },
 
-
+   getMaxScore: (scores) => {
+      var data = scores.map( score => { return TimerHelper.durationToMilliSec(score)  } );
+      var mx = Math.max(...data);
+      return  TimerHelper.milliSecsToTime(mx);
+   },
 
    REDIRECT_TO_LOGIN: {
       pathname: '/'

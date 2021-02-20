@@ -16,17 +16,15 @@ import { Row, Col } from 'react-bootstrap';
 
 function GamePlay() {
 
-   let totalNewWords = 0;
    const defaultTimeOutInMs = Utils.getGameTimeout();
-   const defaultTimeoutDuration = TimerHelper.milliSecsToTime(defaultTimeOutInMs);   
+   const defaultTimeoutDuration = TimerHelper.milliSecsToTime(defaultTimeOutInMs);
    const [pendingTimeInMs, setPendingTimeInMs] = useState(defaultTimeOutInMs);
    const [pendingDuration, setPendingDuration] = useState(defaultTimeoutDuration);
    const wordMgr = new WordManager();
    const [typedText, setTypedText] = useState('');
+   const [wordCount, setWordCount] = useState(0);
 
-   const getNewWord = () => {
-      Utils.saveTotalNewWords(totalNewWords += 1);
-      //Utils.updateGameDifficultyFactor(parseInt(1) * 0.01);
+   const getNewWord = () => {        
       return wordMgr.getWord(Utils.getUserSession().difficultyLevel).toLocaleUpperCase();
    }
    let [newWord, setNewWord] = useState(getNewWord());
@@ -37,10 +35,11 @@ function GamePlay() {
       setPendingTimeInMs(time);
    }
 
-   const handleTimeOut = () => {
-      console.log(Utils.getTotalDuration());
-      Utils.saveUserScore(Utils.getTotalDuration());
-      //history.push(Utils.REDIRECT_TO_EXIST);
+   const handleTimeOut = () => {    
+      if (wordCount > 1) {
+         Utils.saveUserScore(Utils.getTotalDuration());
+      }
+      history.push(Utils.REDIRECT_TO_EXIST);
       return;
    }
 
@@ -53,13 +52,16 @@ function GamePlay() {
          Utils.updateGameDifficultyFactor(currentDiffFactor + 0.01);
          event.target.value = "";
          setPendingTimeInMs(defaultTimeOutInMs);
+         setWordCount(wordCount +1);
+         Utils.saveTotalNewWords(wordCount);
       }
    }
 
 
    useEffect(() => {
-      const timer = pendingTimeInMs > 0 && setInterval(() => updateTimeOutDisplay(pendingTimeInMs - 10), 10);
-      if (pendingTimeInMs === 0) {
+      const timer = pendingTimeInMs > 0 && setInterval(() => updateTimeOutDisplay(pendingTimeInMs - 40), 10);
+      if (pendingTimeInMs <= 0) {
+         updateTimeOutDisplay(0);
          handleTimeOut();
       }
       return () => clearInterval(timer);
