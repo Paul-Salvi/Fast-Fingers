@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/b6-fast-fingers-Paul-Salvi/precache-manifest.bcd0a726f783cba541acfd4567d44ba1.js"
+  "/b6-fast-fingers-Paul-Salvi/precache-manifest.29b4774aaf090a356b8a4ae43e4d68f9.js"
 );
 
 self.addEventListener('message', (event) => {

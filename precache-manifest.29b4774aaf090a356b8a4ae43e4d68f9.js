@@ -1,27 +1,27 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "4186b84fbc3c9e5f965ab1d2521fb5df",
+    "revision": "c1639faa176aa8bb90b2c44eb669bcdc",
     "url": "/b6-fast-fingers-Paul-Salvi/index.html"
   },
   {
-    "revision": "ca888dfc70b8eae0dffc",
+    "revision": "0ce12d5cedd884345ced",
     "url": "/b6-fast-fingers-Paul-Salvi/static/css/2.ff645aaf.chunk.css"
   },
   {
-    "revision": "e39e64573fdbdf683f21",
+    "revision": "b80cd949ce933b8a3980",
     "url": "/b6-fast-fingers-Paul-Salvi/static/css/main.0d318d44.chunk.css"
   },
   {
-    "revision": "ca888dfc70b8eae0dffc",
-    "url": "/b6-fast-fingers-Paul-Salvi/static/js/2.6a701b10.chunk.js"
+    "revision": "0ce12d5cedd884345ced",
+    "url": "/b6-fast-fingers-Paul-Salvi/static/js/2.4cf5cb60.chunk.js"
   },
   {
     "revision": "29eb69a08ea4198f7b46e1db8a3d5045",
-    "url": "/b6-fast-fingers-Paul-Salvi/static/js/2.6a701b10.chunk.js.LICENSE.txt"
+    "url": "/b6-fast-fingers-Paul-Salvi/static/js/2.4cf5cb60.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e39e64573fdbdf683f21",
-    "url": "/b6-fast-fingers-Paul-Salvi/static/js/main.02337c61.chunk.js"
+    "revision": "b80cd949ce933b8a3980",
+    "url": "/b6-fast-fingers-Paul-Salvi/static/js/main.073e1446.chunk.js"
   },
   {
     "revision": "b7587ed4e246179e67af",
