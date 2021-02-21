@@ -1,0 +1,32 @@
+{
+  "files": {
+    "main.css": "/static/css/main.40da276b.chunk.css",
+    "main.js": "/static/js/main.dfd16601.chunk.js",
+    "main.js.map": "/static/js/main.dfd16601.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.519ac2c7.js",
+    "runtime-main.js.map": "/static/js/runtime-main.519ac2c7.js.map",
+    "static/css/2.ff645aaf.chunk.css": "/static/css/2.ff645aaf.chunk.css",
+    "static/js/2.6a701b10.chunk.js": "/static/js/2.6a701b10.chunk.js",
+    "static/js/2.6a701b10.chunk.js.map": "/static/js/2.6a701b10.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.99188ecc895fa995f33496ac7de180e9.js": "/precache-manifest.99188ecc895fa995f33496ac7de180e9.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.ff645aaf.chunk.css.map": "/static/css/2.ff645aaf.chunk.css.map",
+    "static/css/main.40da276b.chunk.css.map": "/static/css/main.40da276b.chunk.css.map",
+    "static/js/2.6a701b10.chunk.js.LICENSE.txt": "/static/js/2.6a701b10.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/static/media/background.e32312a7.png",
+    "static/media/cross-icon.svg": "/static/media/cross-icon.465bb167.svg",
+    "static/media/gamepad-icon.svg": "/static/media/gamepad-icon.0cd364ed.svg",
+    "static/media/keyboard-icon.svg": "/static/media/keyboard-icon.9c1f9820.svg",
+    "static/media/person-icon.svg": "/static/media/person-icon.c589b8d1.svg",
+    "static/media/play-icon.svg": "/static/media/play-icon.c6ad2822.svg",
+    "static/media/reload-icon.svg": "/static/media/reload-icon.7c71c1ab.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.519ac2c7.js",
+    "static/css/2.ff645aaf.chunk.css",
+    "static/js/2.6a701b10.chunk.js",
+    "static/css/main.40da276b.chunk.css",
+    "static/js/main.dfd16601.chunk.js"
+  ]
+}
