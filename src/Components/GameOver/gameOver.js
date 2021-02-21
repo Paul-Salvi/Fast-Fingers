@@ -50,14 +50,14 @@ function GameOver() {
           <Text
             text={latestScore}>
           </Text>
-          {latestScore >= highestScore &&
-            <div> New High Score </div>
-          }
         </div>
+        {scores.length > 0 &&
+          <Text
+            text={"Highest score : " + highestScore.minutes + ":" + highestScore.seconds + ":" + highestScore.milliseconds}>
+          </Text>
+        }
 
-        <Text
-          text={"Highest score : " + highestScore.minutes + ":" + highestScore.seconds + ":" + highestScore.milliseconds}>
-        </Text>
+
 
         <Button
           icon={reloadIcon}
