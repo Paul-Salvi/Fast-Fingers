@@ -15,8 +15,8 @@ function App() {
       <div className="App" >
         <Container className="p-3" fluid="true" >
           <Route exact path="/" component={Initialize}></Route>
-          <Route exact path="/gameplay" component={GamePlay}></Route>
-          <Route exact path="/gameover" component={GameOver}></Route>
+          <Route exact path="/GamePlay" component={GamePlay}></Route>
+          <Route exact path="/GameOver" component={GameOver}></Route>
         </Container>
       </div>
     </Router >
