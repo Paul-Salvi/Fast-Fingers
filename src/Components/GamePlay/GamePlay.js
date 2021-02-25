@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from "react-router-dom";
-import { PlayerInfo } from '../PlayerInfo/PlayerInfo'
-import { ScoreBoard } from '../ScoreBoard/ScoreBoard'
-import { ScoreInfo } from '../ScoreInfo/ScoreInfo'
+import { PlayerInfo } from '../PlayerInfo/PlayerInfo';
+import { ScoreBoard } from '../ScoreBoard/ScoreBoard';
+import { ScoreInfo } from '../ScoreInfo/ScoreInfo';
 import WordsDisplay from '../WordsDisplay/WordDisplay';
 import TimerDisplay from '../TimerDisplay/TimerDisplay';
 import './GamePlay.css'
@@ -19,12 +19,13 @@ function GamePlay() {
    const defaultTimeOutInMs = Utils.getGameTimeout();
    const defaultTimeoutDuration = TimerHelper.milliSecsToTime(defaultTimeOutInMs);
    const [pendingTimeInMs, setPendingTimeInMs] = useState(defaultTimeOutInMs);
+   const [pendingTimeInPercent, setPendingTimeInPercent] = useState(100);
    const [pendingDuration, setPendingDuration] = useState(defaultTimeoutDuration);
    const wordMgr = new WordManager();
    const [typedText, setTypedText] = useState('');
    const [wordCount, setWordCount] = useState(0);
 
-   const getNewWord = () => {        
+   const getNewWord = () => {
       return wordMgr.getWord(Utils.getUserSession().difficultyLevel).toLocaleUpperCase();
    }
    let [newWord, setNewWord] = useState(getNewWord());
@@ -35,7 +36,7 @@ function GamePlay() {
       setPendingTimeInMs(time);
    }
 
-   const handleTimeOut = () => {    
+   const handleTimeOut = () => {
       if (wordCount > 1) {
          Utils.saveUserScore(Utils.getTotalDuration());
       }
@@ -46,13 +47,14 @@ function GamePlay() {
    const handleWordChange = (event) => {
       setTypedText(event.target.value.toLocaleUpperCase());
       if (newWord === event.target.value.toLocaleUpperCase()) {
+         setPendingTimeInPercent(100);
          setNewWord(getNewWord());
-         setTypedText("");
+         setTypedText("");        
          var currentDiffFactor = Utils.getGameDifficultyFactor();
          Utils.updateGameDifficultyFactor(currentDiffFactor + 0.01);
          event.target.value = "";
          setPendingTimeInMs(defaultTimeOutInMs);
-         setWordCount(wordCount +1);
+         setWordCount(wordCount + 1);
          Utils.saveTotalNewWords(wordCount);
       }
    }
@@ -60,6 +62,7 @@ function GamePlay() {
 
    useEffect(() => {
       const timer = pendingTimeInMs > 0 && setInterval(() => updateTimeOutDisplay(pendingTimeInMs - 40), 10);
+      setPendingTimeInPercent((100 * pendingTimeInMs) / defaultTimeOutInMs);
       if (pendingTimeInMs <= 0) {
          updateTimeOutDisplay(0);
          handleTimeOut();
@@ -95,10 +98,10 @@ function GamePlay() {
          <Col md={6}>
             <div className="center">
                <TimerDisplay
-                  duration={pendingDuration} >
+                  duration={pendingDuration}
+                  countdownPercent={pendingTimeInPercent} >
                </TimerDisplay>
             </div>
-
             <WordsDisplay
                word={newWord}
                typedText={typedText} >

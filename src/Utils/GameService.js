@@ -56,7 +56,7 @@ const Utils = {
    }),
 
    getGameTimeout: (difficultyLevel) => {
-      return 4000;
+      return 6000;
    },
 
    getGameDifficultyFactor: () => {
