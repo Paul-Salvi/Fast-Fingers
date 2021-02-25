@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "f159f51ac1de3823ef0b926a43d3ad6a",
+    "revision": "8a3dc6a8dd2459fac1607e768fdd6dbe",
     "url": "/b6-fast-fingers-Paul-Salvi/index.html"
   },
   {
@@ -8,8 +8,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/b6-fast-fingers-Paul-Salvi/static/css/2.ff645aaf.chunk.css"
   },
   {
-    "revision": "2f2a2235b476c5f2fbb4",
-    "url": "/b6-fast-fingers-Paul-Salvi/static/css/main.0d318d44.chunk.css"
+    "revision": "26dc6964b0e556260866",
+    "url": "/b6-fast-fingers-Paul-Salvi/static/css/main.98d859cb.chunk.css"
   },
   {
     "revision": "0ce12d5cedd884345ced",
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/b6-fast-fingers-Paul-Salvi/static/js/2.4cf5cb60.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2f2a2235b476c5f2fbb4",
-    "url": "/b6-fast-fingers-Paul-Salvi/static/js/main.b9241ba2.chunk.js"
+    "revision": "26dc6964b0e556260866",
+    "url": "/b6-fast-fingers-Paul-Salvi/static/js/main.802b6992.chunk.js"
   },
   {
     "revision": "b7587ed4e246179e67af",
