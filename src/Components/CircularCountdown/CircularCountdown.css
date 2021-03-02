@@ -1,0 +1,31 @@
+.base-timer {
+   position: relative;
+   height: 180px;
+   width: 180px;   
+ }
+ .base-timer__label {
+   position: absolute;
+   width: 180px;
+   height: 180px;
+   top: 0;
+   display: flex;
+   align-items: center;
+   justify-content: center; 
+   font-size: 38px;
+   color: rgb(255, 255, 255);
+ }
+ 
+ .progress-ring {
+   transform: scaleX(-1);  
+}
+
+.progress-ring__circle {
+
+  transition: 0.10s stroke-dashoffset;  
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%; 
+   stroke-width: 7px;
+   stroke-linecap: round;
+   stroke: currentColor;
+   
+}

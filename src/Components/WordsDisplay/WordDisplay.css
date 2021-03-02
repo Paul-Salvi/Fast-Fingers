@@ -1,0 +1,17 @@
+.wordDisplay{
+   font-size: xxx-large;
+   display: inline;
+   color:rgb(255, 255, 255);
+   text-transform: uppercase;
+   margin: 10px;
+   text-align: center;
+}
+.wordDisplay div {
+   display: inline;
+}
+.correct {
+   color: green;
+}
+.incorrect{
+   color: red;
+}

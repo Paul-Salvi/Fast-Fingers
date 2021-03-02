@@ -1,0 +1,21 @@
+.ScoreBoard{
+   border: 1px #E83241 solid;   
+   padding: 5px; 
+   height: 60vh;
+   min-width: 80px;
+   overflow: hidden;
+   text-align: left;
+   margin-top: 20px;
+}
+.scoreBoardHeader{   
+    font-size: x-large;
+    text-align: center;
+}
+.scores{
+   color: rgb(255, 255, 255); 
+   text-align: left;
+}
+
+.scoresContainer{
+   padding: 1px; 
+}
