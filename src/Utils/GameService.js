@@ -96,7 +96,13 @@ const Utils = {
    REDIRECT_TO_LOGIN: {
       pathname: '/'
    },
-   REDIRECT_TO_EXIST: {
+   REDIRECT_TO_REGISTER: {
+      pathname: '/register'
+   },
+   REDIRECT_TO_START: {
+      pathname: '/start'
+   },
+   REDIRECT_TO_EXIT: {
       pathname: '/gameover'
    },
    REDIRECT_TO_GAME: {

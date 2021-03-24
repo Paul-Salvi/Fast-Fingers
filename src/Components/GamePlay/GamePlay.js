@@ -40,7 +40,7 @@ function GamePlay() {
       if (wordCount > 1) {
          Utils.saveUserScore(Utils.getTotalDuration());
       }
-      history.push(Utils.REDIRECT_TO_EXIST);
+      history.push(Utils.REDIRECT_TO_EXIT);
       return;
    }
 
@@ -74,7 +74,7 @@ function GamePlay() {
    let history = useHistory();
    const handleStopGame = (event) => {
       Utils.saveUserScore(Utils.getTotalDuration());
-      history.push(Utils.REDIRECT_TO_EXIST);
+      history.push(Utils.REDIRECT_TO_EXIT);
       return;
    }
    const userData = Utils.getUserSession();

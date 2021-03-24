@@ -17,7 +17,7 @@ function Initialize() {
   const [errorMessage, setErrorMessage] = useState('');
   const [isError, setErrorFlag] = useState(false);
   const difficulties = [
-    { label: "Easy", value: "Easy" },
+    { label: "Easy", value: "EASY" },
     { label: "Medium", value: "MEDIUM" },
     { label: "Hard", value: "HARD" }
   ]
